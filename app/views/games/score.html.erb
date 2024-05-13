@@ -1,0 +1,7 @@
+<h1><%=@valid ? "🥳🥳🥳": "😡😠😡😠"%></h1>
+<p><%= @message %></p>
+
+<p>Total score: <%= session[:score_total] %></p>
+<p>You've played <%= session[:played_total] %> <%= session[:played_total] == 1 ? "time": "times" %></p>
+
+<%= link_to "Play again! 🤓", new_path %>

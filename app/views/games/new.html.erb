@@ -1,0 +1,17 @@
+<div style="display: flex">
+  <% @letter_array.each do |letter| %>
+    <div id="letterbox"><%= letter %></div>
+  <% end %>
+</div>
+
+
+
+<form action="/score" method="post" data-turbo="false">
+  <label for="submission" style="margin: 4px">Can you find a word? 👀</label>
+  <input style="margin: 4px" type="text" name="submission">
+  <input style="margin: 4px" type="submit" value="Submit!">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letter_array %>
+  <%= hidden_field_tag :timestamp, Time.now() %>
+
+</form>
